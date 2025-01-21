@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/drawer_border"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -11,7 +11,6 @@
         android:layout_height="150dp"
         android:background="@drawable/header_bkg"
         android:gravity="bottom"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
         android:orientation="vertical">
 
        <ImageView
@@ -25,7 +24,7 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginBottom="16dp"
-            android:textColor="@color/white"/>
+            android:textColor="#1E4A76"/>
 
     </LinearLayout>
 
@@ -45,7 +44,7 @@
             android:textSize="20sp"
             android:drawableLeft="@drawable/home"
             android:drawablePadding="8dp"
-            android:textColor="@color/b1"/>
+            android:textColor="#1E4A76"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,7 +62,7 @@
             android:textSize="20sp"
             android:drawableLeft="@drawable/reviews"
             android:drawablePadding="8dp"
-            android:textColor="@color/b1"/>
+            android:textColor="#1E4A76"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,6 +80,6 @@
             android:textSize="20sp"
             android:drawableLeft="@drawable/favorites"
             android:drawablePadding="8dp"
-            android:textColor="@color/b1"/>
+            android:textColor="#1E4A76"/>
     </LinearLayout>
 </LinearLayout>

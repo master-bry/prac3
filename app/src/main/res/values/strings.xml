@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">practicle3</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorites">My Favorites</string>
+    <string name="title_myReview">My Reviews</string>
+    <string name="name">RESTAURANT APP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

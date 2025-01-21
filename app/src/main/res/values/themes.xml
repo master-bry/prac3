@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Practicle3" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:statusBarColor">@color/b1</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- NavigationView specific attributes -->
+        <item name="navigationViewStyle">@style/Widget.Material3.NavigationView</item>
+        <item name="itemTextColor">?attr/colorOnSurface</item>
+        <item name="itemIconTint">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Theme.Practicle3" parent="Base.Theme.Practicle3" />
+</resources>

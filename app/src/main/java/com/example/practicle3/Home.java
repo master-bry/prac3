@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
-
 import androidx.fragment.app.Fragment;
 
 public class Home extends Fragment {
@@ -27,6 +25,7 @@ public class Home extends Fragment {
         review_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Start the AddReview activity
                 Intent intent = new Intent(getActivity(), AddReview.class);
                 startActivity(intent);
             }
@@ -35,9 +34,9 @@ public class Home extends Fragment {
         favorite_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Start the AddFavorite activity
                 Intent intent = new Intent(getActivity(), AddFavorite.class);
                 startActivity(intent);
-
             }
         });
 

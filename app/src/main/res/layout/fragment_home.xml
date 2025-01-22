@@ -36,8 +36,7 @@
             android:textColor="@android:color/white"
             android:backgroundTint="#0BA0A0"
             android:paddingVertical="12dp"
-            android:gravity="center"
-            android:drawableStart="@drawable/reviews"/>
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/fav_btn"

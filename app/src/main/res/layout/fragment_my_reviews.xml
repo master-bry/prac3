@@ -2,18 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    android:layout_height="match_parent"
-    tools:context=".Favorites">
+    tools:context=".MyReviews">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:gravity="center"
+    <!-- RecyclerView to display reviews code goes here-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reviews_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="REVIEWS FRAGMENT" />
+        android:padding="16dp"
+        tools:listitem="@layout/item_review" />
 
 </LinearLayout>

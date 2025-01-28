@@ -5,18 +5,15 @@ public class Review {
     private String reviewText;
     private String timestamp;
 
-    // Default constructor (optional)
     public Review() {
     }
 
-    // Parameterized constructor
     public Review(long id, String reviewText, String timestamp) {
         this.id = id;
         this.reviewText = reviewText;
         this.timestamp = timestamp;
     }
 
-    // Getters
     public long getId() {
         return id;
     }
@@ -42,7 +39,6 @@ public class Review {
         this.timestamp = timestamp;
     }
 
-    // toString() method for debugging
     @Override
     public String toString() {
         return "Review{" +

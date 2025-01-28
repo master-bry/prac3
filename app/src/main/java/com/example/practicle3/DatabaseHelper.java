@@ -12,9 +12,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "UserData.db";
     public static final String TABLE_REVIEWS = "reviews";
     public static final String TABLE_FAVORITES = "favorites";
-        // Common Column Names
     public static final String COLUMN_ID = "id";
-      // Reviews Table Columns
 
     public static final String COLUMN_FAVORITE_TEXT = "favorite_text";
     public static final String COLUMN_REVIEW_TEXT = "review_text";

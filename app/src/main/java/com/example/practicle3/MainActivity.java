@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Set the layout first
+        setContentView(R.layout.activity_main);
 
         // Initialize views
         drawerLayout = findViewById(R.id.drawer_layout);
-        toolbar = findViewById(R.id.toolbar); // Initialize toolbar after setContentView
-        menu = toolbar.findViewById(R.id.menu); // Find menu button within the toolbar
+        toolbar = findViewById(R.id.toolbar);
+        menu = toolbar.findViewById(R.id.menu);
         home = findViewById(R.id.home);
         reviews = findViewById(R.id.reviews);
         favorites = findViewById(R.id.myfavorite);
@@ -47,49 +47,45 @@ public class MainActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(new Home()); // Replace with HomeFragment
-                closeDrawer(drawerLayout); // Close the drawer after selection
+                replaceFragment(new Home());
+                closeDrawer(drawerLayout);
             }
         });
 
         reviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(new MyReviews()); // Replace with MyReviewsFragment
-                closeDrawer(drawerLayout); // Close the drawer after selection
+                replaceFragment(new MyReviews());
+                closeDrawer(drawerLayout);
             }
         });
 
         favorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(new Favorites()); // Replace with FavoritesFragment
-                closeDrawer(drawerLayout); // Close the drawer after selection
+                replaceFragment(new Favorites());
+                closeDrawer(drawerLayout);
             }
         });
 
-        // Load the default fragment (e.g., HomeFragment) when the activity starts
         if (savedInstanceState == null) {
             replaceFragment(new Home());
         }
     }
 
-    // Method to replace fragments
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment); // Use correct container ID
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
     }
 
-    // Method to open the drawer
     public static void openDrawer(DrawerLayout drawerLayout) {
         if (drawerLayout != null) {
             drawerLayout.openDrawer(GravityCompat.START);
         }
     }
 
-    // Method to close the drawer
     public static void closeDrawer(DrawerLayout drawerLayout) {
         if (drawerLayout != null && drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -99,6 +95,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        closeDrawer(drawerLayout); // Close the drawer when the activity is paused
+        closeDrawer(drawerLayout);
     }
 }

@@ -22,38 +22,26 @@ public class MyReviews extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_reviews, container, false);
 
         Log.d("MyReviews", "Fragment created and view inflated.");
 
-        // Initialize RecyclerView
         recyclerView = view.findViewById(R.id.reviews_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        // Initialize DatabaseHelper
         dbHelper = new DatabaseHelper(getActivity());
-
-        // Fetch reviews from the database
         reviewList = new ArrayList<>();
         fetchReviews();
 
-        // Set up the adapter
         adapter = new ReviewAdapter(getActivity(), reviewList, dbHelper);
         recyclerView.setAdapter(adapter);
-
         Log.d("MyReviews", "Adapter set up successfully.");
-
         return view;
     }
 
     private void fetchReviews() {
         Log.d("MyReviews", "Fetching reviews from the database.");
-
-        // Clear the existing list
         reviewList.clear();
 
-        // Fetch reviews from the database
         Cursor cursor = dbHelper.getAllReviews();
         if (cursor != null) {
             if (cursor.moveToFirst()) {

@@ -7,7 +7,6 @@
     android:background="@color/white"
     tools:context=".MyReviews">
 
-    <!-- RecyclerView to display reviews code goes here-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reviews_recycler_view"
         android:layout_width="match_parent"

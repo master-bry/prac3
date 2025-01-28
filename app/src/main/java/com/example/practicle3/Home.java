@@ -14,18 +14,12 @@ public class Home extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        // Initialize buttons
         review_btn = view.findViewById(R.id.rev_btn);
         favorite_btn = view.findViewById(R.id.fav_btn);
-
-        // Set click listeners for the buttons
         review_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start the AddReview activity
                 Intent intent = new Intent(getActivity(), AddReview.class);
                 startActivity(intent);
             }
@@ -34,7 +28,6 @@ public class Home extends Fragment {
         favorite_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start the AddFavorite activity
                 Intent intent = new Intent(getActivity(), AddFavorite.class);
                 startActivity(intent);
             }

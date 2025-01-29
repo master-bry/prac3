@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="@android:color/black"
-        android:text="This is a sample review."
+        android:text="REVIEW CONTENTS."
         android:layout_marginBottom="8dp" />
 
     <TextView

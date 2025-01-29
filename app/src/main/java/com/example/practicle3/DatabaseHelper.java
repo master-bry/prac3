@@ -17,13 +17,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_FAVORITE_TEXT = "favorite_text";
     public static final String COLUMN_REVIEW_TEXT = "review_text";
     public static final String COLUMN_TIMESTAMP = "timestamp";
-    //Reviews Table Query
+
     private static final String CREATE_TABLE_REVIEWS = "CREATE TABLE " + TABLE_REVIEWS + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_REVIEW_TEXT + " TEXT,"
             + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
             + ")";
-    // Favorites Table Query
+
     private static final String CREATE_TABLE_FAVORITES = "CREATE TABLE " + TABLE_FAVORITES + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_FAVORITE_TEXT + " TEXT,"
@@ -48,18 +48,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Insert a review into the database
+
     public long addReview(String reviewText) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_REVIEW_TEXT, reviewText);
 
-        // Insert row
+       //row
         long id = db.insert(TABLE_REVIEWS, null, values);
         db.close();
         return id;
     }
-    // Insert a favorite into the database
+
     public long addFavorite(String favoriteText) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -72,25 +72,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    // Get all reviews from the database
+
     public Cursor getAllReviews() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.query(TABLE_REVIEWS, null, null, null, null, null, COLUMN_TIMESTAMP + " DESC");
     }
 
-    // Get all favorites from the database
+
     public Cursor getAllFavorites() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.query(TABLE_FAVORITES, null, null, null, null, null, COLUMN_TIMESTAMP + " DESC");
     }
-    // Delete a favorite from the database
+
     public void deleteFavorite(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_FAVORITES, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
         db.close();
     }
 
-    // Delete a review from the database
     public void deleteReview(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_REVIEWS, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
